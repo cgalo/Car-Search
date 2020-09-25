@@ -4,7 +4,7 @@ import SearchBar from './SearchBar/SearchBar';
 
 function App() {
   return (
-    <div>
+    <div className="ui container">
       <SearchBar/>
     </div>
   );
