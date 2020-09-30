@@ -1,6 +1,8 @@
 import React from 'react'
 
-type MyProps = {};
+type MyProps = {
+    InputHandler: (input: String) => void;
+};
 type MyState = {searchInput: string};
 
 class SearchBar extends React.Component <MyProps, MyState>{
@@ -15,8 +17,8 @@ class SearchBar extends React.Component <MyProps, MyState>{
     };
     
     onFormSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log(this.state.searchInput);
+        e.preventDefault(); 
+        this.props.InputHandler(this.state.searchInput);
     };
 
      render (){
