@@ -9,8 +9,15 @@ class App extends React.Component {
     searchInput : ''
   };
 
-  onSearchSubmit = (val: String) => {
-    console.log(val);
+  onSearchSubmit = (userInput: String) => {
+    axios.get('https://api.unsplash.com/search/photos', {
+      params: {
+        query: (userInput)
+      },
+      headers: {
+        Authorization: 'Client-ID ' + (process.env.REACT_APP_UNSPLASH_API_KEY)
+      }
+    });
   }
   
   render () {
